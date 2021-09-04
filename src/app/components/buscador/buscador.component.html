@@ -1,0 +1,40 @@
+<div class="container">
+  <form autocomplete="off" [formGroup]="forma" (ngSubmit)="buscarHeroe()">
+    <div class="search">
+      <h3 class="search__title">Find Heroes</h3>
+      <mat-form-field appearance="legacy" floatLabel="never">
+        <input
+          matInput
+          type="text"
+          [matAutocomplete]="auto"
+          formControlName="heroeBuscado"
+          #trigger="matAutocompleteTrigger"
+          (keydown.enter)="trigger.closePanel()"
+          class="typeahead__input"
+        />
+        <mat-placeholder class="placeholder">Search</mat-placeholder>
+        <mat-icon matPrefix class="searchIcon">search</mat-icon>
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          [displayWith]="displayFn"
+          class="autocomplete"
+          classlist="autocomplete"
+          (optionSelected)="buscarHeroe()"
+        >
+          <mat-option
+            *ngFor="let option of filteredOptions | async"
+            [value]="option"
+          >
+            <span [innerHTML]="option.name | highlight: toHighlight"></span>
+            <span></span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </form>
+  <app-heroes
+    *ngIf="matchHeros"
+    [heroes]="matchHeros"
+    class="heroes"
+  ></app-heroes>
+</div>

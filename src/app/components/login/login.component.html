@@ -1,0 +1,155 @@
+<div class="container">
+    <mat-card>
+      <mat-tab-group dynamicHeight animationDuration="0ms" (selectedTabChange)="setSelectedForm($event)">
+        <mat-tab label="Sign In">
+          <div class="signin">
+            <form
+              class="signin__form"
+              [formGroup]="loginForm"
+              (submit)="submit()"
+            >
+              <mat-form-field appearance="outline">
+                <mat-label>Username or email</mat-label>
+                <input matInput formControlName="email" required />
+                <mat-error
+                  *ngIf="
+                    loginForm.controls.email.touched &&
+                    loginForm.controls.email.invalid
+                  "
+                >
+                  <span *ngIf="loginForm.controls.email.errors.required"
+                    >This field is mandatory.</span
+                  >
+                  <span *ngIf="loginForm.controls.email.errors.pattern"
+                    >This field is invalid.</span
+                  >
+                </mat-error>
+                <mat-icon class="input-icon" matPrefix>account_circle</mat-icon>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" />
+                <mat-error
+                  *ngIf="
+                    loginForm.controls.password.touched &&
+                    loginForm.controls.password.invalid
+                  "
+                >
+                  <span *ngIf="loginForm.controls.password.errors.required"
+                    >This field is mandatory.</span
+                  >
+                </mat-error>
+                <mat-icon class="input-icon" matPrefix>lock</mat-icon>
+              </mat-form-field>
+              <div class="forgot-password">
+                <a class="forgot-link" [routerLink]="['/forgot-password']">Forgot Password?</a>
+              </div>
+              <button mat-raised-button color="primary" type="submit">
+                Sign In
+              </button>
+            </form>
+            <div class="social-divider">
+              <span>or</span>
+            </div>
+            <div class="social-signin">
+              <button
+                class="social-signin__button social-signin__button--google"
+                type="submit"
+                (click)="loginWithGoogle()"
+              >
+                <mat-icon
+                  svgIcon="google-icon"
+                  class="social-signin__icon"
+                ></mat-icon>
+                <span class="social-signin__brand">Google</span>
+              </button>
+              <!-- <button class="social-signin__button social-signin__button--linkedin" type="submit">
+                <mat-icon
+                  svgIcon="linkedin-icon"
+                  class="social-signin__icon"
+                ></mat-icon>
+                <span class="social-signin__brand">Linkedin</span>
+              </button>
+              <button class="social-signin__button social-signin__button--github" type="submit">
+                <mat-icon
+                  svgIcon="github-icon"
+                  class="social-signin__icon"
+                ></mat-icon>
+                <span class="social-signin__brand">Github</span>
+              </button> -->
+              <!-- <button class="social-signin__button" type="submit">
+                <mat-icon
+                  svgIcon="google-icon"
+                  class="social-signin__icon"
+                ></mat-icon>
+                <span class="social-signin__brand">Google</span>
+              </button> -->
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Sign Up">
+          <div class="signin">
+            <form
+              class="signin__form"
+              [formGroup]="loginForm"
+              (submit)="submit()"
+            >
+              <mat-form-field appearance="outline">
+                <mat-label>Username or email</mat-label>
+                <input matInput formControlName="email" required />
+                <mat-error
+                  *ngIf="
+                    loginForm.controls.email.touched &&
+                    loginForm.controls.email.invalid
+                  "
+                >
+                  <span *ngIf="loginForm.controls.email.errors.required"
+                    >This field is mandatory.</span
+                  >
+                  <span *ngIf="loginForm.controls.email.errors.pattern"
+                    >This field is invalid.</span
+                  >
+                </mat-error>
+                <mat-icon class="input-icon" matPrefix>account_circle</mat-icon>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" />
+                <mat-error
+                  *ngIf="
+                    loginForm.controls.password.touched &&
+                    loginForm.controls.password.invalid
+                  "
+                >
+                  <span *ngIf="loginForm.controls.password.errors.required"
+                    >This field is mandatory.</span
+                  >
+                </mat-error>
+                <mat-icon class="input-icon" matPrefix>lock</mat-icon>
+              </mat-form-field>
+              <button mat-raised-button color="primary" type="submit">
+                Sign Up
+              </button>
+            </form>
+            <div class="social-divider">
+              <span>or</span>
+            </div>
+            <div class="social-signin">
+              <button
+                class="social-signin__button social-signin__button--google"
+                type="submit"
+                (click)="loginWithGoogle()"
+              >
+                <mat-icon
+                  svgIcon="google-icon"
+                  class="social-signin__icon"
+                ></mat-icon>
+                <span class="social-signin__brand">Google</span>
+              </button>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+  

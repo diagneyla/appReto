@@ -1,0 +1,44 @@
+<div class="card">
+  <mat-card class="card__side card__side--front">
+    <mat-card-header>
+      <mat-card-title
+        ><strong>{{ hero.name }}</strong></mat-card-title
+      >
+    </mat-card-header>
+    <img
+      class="card__img"
+      [src]="hero.image.url"
+      alt="Hero image not available"
+    />
+    <mat-card-content> </mat-card-content>
+  </mat-card>
+  <mat-card class="card__side card__side--back">
+    <mat-card-header>
+      <mat-card-title>Powerstats</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-powerstats
+        [radarChartData]="radarChartData"
+        [radarChartLabels]="radarChartLabels"
+      >
+      </app-powerstats>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="setSelectedHero(hero)" mat-raised-button>DETAILS</button>
+      <button
+        (click)="addHeroToTeam()"
+        mat-raised-button
+        *ngIf="selectedRoute !== 'team'"
+      >
+        ADD
+      </button>
+      <button
+        (click)="removeHeroFromTeam()"
+        mat-raised-button
+        *ngIf="selectedRoute === 'team'"
+      >
+        REMOVE
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

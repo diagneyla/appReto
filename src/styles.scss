@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+snack-bar-container.success {
+  background-color: #fff;
+  text-transform: uppercase;
+  color: darkorange;
+  font-weight: 800;
+}
+
+snack-bar-container.error {
+  background-color: purple;
+  text-transform: uppercase;
+  color: darkorange;
+  font-weight: 800;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

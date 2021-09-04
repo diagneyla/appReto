@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="team">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>My Team</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="heroes">
+            <ng-container *ngFor="let hero of myTeam">
+              <app-heroe [hero]="hero" class="hero"></app-heroe>
+            </ng-container>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="team-powerstats">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Team Powerstats</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="meters">
+            <ng-container *ngFor="let meter of teamPowerstatsArray">
+              <app-meter
+                [amountValue]="meter.value"
+                [label]="meter.label"
+              ></app-meter>
+            </ng-container>
+          </div>
+  
+          <div class="team-information">
+            <p class="team-information__label">
+              Team Core Skill: <span class="team-information__value">{{ mainSkill | uppercase }}</span>
+            </p>
+            <p class="team-information__label">
+              Average Weight:
+              <span class="team-information__value">{{ averageWeight }}</span>
+            </p>
+            <p class="team-information__label">
+              Average Height: <span class="team-information__value">{{ averageHeight }}</span>
+            </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  

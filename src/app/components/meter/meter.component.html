@@ -1,0 +1,21 @@
+<div
+  class="full-circle"
+>
+  <div class="progress-circle" [ngStyle]="{ width: diameter + 'px', height: diameter + 'px' }" [ngClass]="'group-2'">
+    <span class="center"> </span>
+    <span class="outer">
+      <span class="value">{{ percentValue | percent }}</span>
+      <span class="label">{{ label | uppercase }}</span>
+    </span>
+    <span class="inner"></span>
+
+    <mat-progress-spinner
+      [mode]="isDeterminate ? 'determinate' : 'indeterminate'"
+      [value]="percentValue*100"
+      [ngStyle]="spinnerStyle"
+      [strokeWidth]="8"
+      diameter="{{ getDiameter() }}"
+    >
+    </mat-progress-spinner>
+  </div>
+</div>

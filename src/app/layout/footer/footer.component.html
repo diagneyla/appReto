@@ -1,0 +1,20 @@
+<footer class="footer">
+  <mat-toolbar layout="fill">
+    <span class="fill-space"></span>
+    <a [href]="githubUrl" target="_blank" mat-mini-fab class="a__github">
+      <mat-icon svgIcon="github-icon" class="social-signin__icon"></mat-icon>
+    </a>
+
+    <a href="mailto:{{ gmailUrl }}" target="_blank" mat-mini-fab class="a__gmail">
+      <mat-icon svgIcon="google-icon" class="social-signin__icon"></mat-icon>
+    </a>
+
+    <a [href]="linkedinUrl" target="_blank" mat-mini-fab class="a__linkedin">
+      <mat-icon svgIcon="linkedin-icon" class="social-signin__icon"></mat-icon>
+    </a>
+    <span class="fill-space"></span>
+  </mat-toolbar>
+  <mat-list [ngStyle]="{ display: 'none' }">
+    <mat-list-item></mat-list-item>
+  </mat-list>
+</footer>

@@ -1,0 +1,14 @@
+<mat-nav-list>
+    
+    <a mat-list-item [routerLink]="['/home']" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
+    </a>
+
+    <a mat-list-item [routerLink]="['/heroes']" (click)="onSidenavClose()">
+        <mat-icon>search</mat-icon> <span class="nav-caption">Search Hero</span>
+    </a>
+
+    <a mat-list-item [routerLink]="['/team']" (click)="onSidenavClose()">
+        <mat-icon>supervisor_account</mat-icon><span class="nav-caption">My Team</span>
+    </a>
+  </mat-nav-list>

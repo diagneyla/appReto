@@ -1,0 +1,80 @@
+<mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a [routerLink]="['/home']"
+      ><span fxHide.xs class="navbar__icon"
+        ><img src="./assets/icons/hero_icon.ico" style="width: 50px" /></span
+      ><span>Heroes App</span></a
+    >
+  </div>
+  <div
+    fxFlex
+    fxLayout
+    fxLayoutAlign="end center"
+    fxHide.xs
+    class="navbar__links"
+  >
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <li>
+        <a
+          mat-button
+          [routerLink]="['/heroes']"
+          routerLinkActive="mat-list-item-focus"
+          >Heroes</a
+        >
+      </li>
+      <li *ngIf="isLoggedIn">
+        <a
+          mat-button
+          [routerLink]="['/team']"
+          routerLinkActive="mat-list-item-focus"
+          >My Team</a
+        >
+      </li>
+    </ul>
+    <div class="logout" *ngIf="isLoggedIn">
+      <button
+        *ngIf="authService.userData.photoURL"
+        md-fab
+        class="user-icon"
+        [style.backgroundImage]="'url(' + authService.userData.photoURL + ')'"
+        [matMenuTriggerFor]="menu"
+        color="accent"
+      ></button>
+
+      <button
+        *ngIf="!authService.userData.photoURL"
+        mat-icon-button
+        class="user-icon user-icon--alternative"
+        [matMenuTriggerFor]="menu"
+        color="accent"
+      >
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu" [overlapTrigger]="false" class="logout__menu">
+        <button
+          mat-icon-button
+          class="logout__button"
+          (click)="authService.SignOut()"
+        >
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
+    <a
+      *ngIf="!isLoggedIn"
+      class="button"
+      color="primary"
+      mat-raised-button
+      [routerLink]="['/login']"
+      routerLinkActive="mat-list-item-focus"
+      >Login to Recruit your Team</a
+    >
+  </div>
+</mat-toolbar>

@@ -1,0 +1,90 @@
+:host {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    margin: 4rem 0;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    .search{
+  
+      &__header{
+        display: flex;
+        justify-content: space-between;
+  
+      }
+    }
+  }
+  
+  ::ng-deep .autocomplete {
+    top: 5px;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  ::ng-deep .highlight {
+    color: rgba(255, 0, 0, 0.8);
+    font-weight: 800;
+  }
+  
+  .search__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .placeholder {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 0;
+    width: 100%;
+    padding-bottom: 0.4375rem;
+    padding-left: 1.875rem;
+    border-radius: 0;
+    color: lightgray;
+  }
+  
+  .searchIcon {
+    font-size: 2rem;
+  }
+  
+  .typeahead__input {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 0;
+    width: 100%;
+    padding-bottom: 0.4375rem;
+    padding-left: 1.875rem;
+    border-radius: 0;
+  }
+  
+  form,
+  .heroes {
+    width: 100%;
+  }
+  
+  mat-form-field {
+    width: 50%;
+  }
+  
+  mat-option {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1rem;
+    color: rgba(255, 0, 0, 0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  

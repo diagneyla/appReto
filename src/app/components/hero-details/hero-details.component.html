@@ -1,0 +1,78 @@
+<div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title> Hero Details </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="hero-image">
+          <img
+            class="card__img"
+            [src]="selectedHero.image.url"
+            alt="Hero image not available"
+          />
+        </div>
+        <div class="hero-detail">
+          <p class="hero-detail__name">{{ selectedHero.name }}</p>
+          <p class="hero-detail__label">
+            Weight:
+            <span class="hero-detail__value"
+              >{{ selectedHero.appearance.weight[1] }} ({{
+                selectedHero.appearance.weight[0]
+              }})
+            </span>
+          </p>
+          <p class="hero-detail__label">
+            Height:
+            <span class="hero-detail__value"
+              >{{ selectedHero.appearance.height[1] }} ({{
+                selectedHero.appearance.height[0]
+              }})
+            </span>
+          </p>
+          <p class="hero-detail__label">Aliases:</p>
+          <ul>
+            <li
+              class="hero-detail__value"
+              *ngFor="let alias of selectedHero.biography.aliases"
+            >
+              {{ alias }}
+            </li>
+          </ul>
+          <p class="hero-detail__label">
+            Eyes Color:
+            <span class="hero-detail__value">{{
+              selectedHero.appearance["eye-color"] || "n/a"
+            }}</span>
+          </p>
+          <p class="hero-detail__label">
+            Hair Color:
+            <span class="hero-detail__value">{{
+              selectedHero.appearance["hair-color"] || "n/a"
+            }}</span>
+          </p>
+          <p class="hero-detail__label">
+            Job Address:
+            <span class="hero-detail__value">{{
+              selectedHero.work.base || "n/a"
+            }}</span>
+          </p>
+          <p class="hero-detail__label">
+            Alignment:
+            <span class="hero-detail__value">{{
+              selectedHero.biography.alignment | titlecase
+            }}</span>
+          </p>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          (click)="addHeroToTeam()"
+          mat-raised-button
+        >
+          ADD
+        </button>
+        <button (click)="goBack()" mat-raised-button>BACK</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

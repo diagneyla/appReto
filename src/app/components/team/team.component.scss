@@ -1,0 +1,62 @@
+:host {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    margin: 4rem 0;
+    flex-direction: column-reverse;
+    width: 90%;
+    align-items: center;
+  
+    .team {
+      width: 100%;
+      margin: 3rem 0;
+  
+      &-powerstats {
+        flex-grow: 1;
+        width: 70%;
+  
+        mat-card{
+  
+          mat-card-content{
+            display: flex;
+            flex-direction: column;
+  
+            .meters{
+              display: flex;
+              justify-content: space-around;
+              margin: 0.5rem 1rem 1rem;
+            }
+  
+            .team-information{
+              display: flex;
+              justify-content: space-around;
+  
+              &__label{
+                font-weight: 800;
+              }
+  
+              &__value{
+                color: magenta;
+                font-weight: 800;
+              }
+            }
+          }
+  
+        }
+      }
+  
+      .heroes {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(24rem, 1fr));
+      }
+    }
+  }
+  
